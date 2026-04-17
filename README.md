@@ -1,12 +1,12 @@
 # Honest Agent
 
-A VS Code extension that installs agent conduct rules and enforcement structure into any project — for GitHub Copilot and Claude agents.
+Source content repository for the Honest Agent VS Code extension — AI agent conduct rules and enforcement structure for GitHub Copilot and Claude.
 
-## What It Does
+## About This Repository
 
-Running the **Honest Agent: Install Conduct Rules** command adds a structured conduct rule set and enforcement skills to your project. These files govern AI agent behavior across the project, covering both GitHub Copilot and Claude.
+This repository contains the authoritative source files that the Honest Agent extension installs into projects. It is not the extension itself. The extension packages these files and deploys them into a user's project via the VS Code command palette.
 
-### Files Installed
+## What Gets Installed Into a Project
 
 | File | Purpose |
 |---|---|
@@ -15,7 +15,18 @@ Running the **Honest Agent: Install Conduct Rules** command adds a structured co
 | `.github/skills/-agent-pre-response-gate/SKILL.md` | Two-phase gate that evaluates every agent response before delivery |
 | `.github/skills/-agent-conduct-rule-report/SKILL.md` | Skill for generating a structured session conduct report |
 
-If any of these files already exist, the extension prompts before overwriting.
+If any of these files already exist in the target project, the extension prompts before overwriting.
+
+## Repository Contents
+
+| Path | Description |
+|---|---|
+| `AGENTS.md` | Full conduct rule set — the primary source file |
+| `AgentConductRules.md` | Standalone conduct rules block (appended to existing AGENTS.md files) |
+| `.github/skills/` | Skill source files deployed by the extension |
+| `.claude/` | Claude-specific configuration source |
+| `honest-agent-logos/` | Logo design samples |
+| `Instructions to Create the Extension.md` | Build notes for the VS Code extension |
 
 ## Conduct Rule Set
 
@@ -48,18 +59,6 @@ The `-agent-pre-response-gate` skill enforces a two-phase gate on every agent tu
 | **Pre-Delivery Phase** | Before every response is delivered | Evaluates the forming response against all F and A rules; re-drafts on failure |
 
 The gate also maintains a session conduct violation log at `/memories/session/conduct-violations.md`, recording any violations detected and corrected during the session.
-
-## Usage
-
-1. Open a project folder in VS Code
-2. Open the Command Palette (`Ctrl+Shift+P`)
-3. Run **Honest Agent: Install Conduct Rules**
-4. Follow the installation wizard
-
-## Requirements
-
-- VS Code 1.0.0 or later
-- A workspace folder must be open before running the install command
 
 ## Publisher
 
