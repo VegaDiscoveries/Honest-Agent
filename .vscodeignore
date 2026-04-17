@@ -1,0 +1,7 @@
+.vscode/**
+.vs/**
+test/**
+.gitignore
+jsconfig.json
+*.vsix
+Instructions to Create the Extension.md

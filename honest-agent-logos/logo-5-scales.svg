@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1b5e20"/>
+      <stop offset="100%" style="stop-color:#33691e"/>
+    </linearGradient>
+    <linearGradient id="scaleBar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a5d6a7"/>
+      <stop offset="100%" style="stop-color:#66bb6a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="22" fill="url(#bg5)"/>
+
+  <!-- Subtle radial glow -->
+  <radialGradient id="centerGlow5" cx="50%" cy="45%" r="50%">
+    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08"/>
+    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+  </radialGradient>
+  <rect width="128" height="128" rx="22" fill="url(#centerGlow5)"/>
+
+  <!-- Balance pole (vertical) -->
+  <rect x="61.5" y="28" width="5" height="68" rx="2.5" fill="url(#scaleBar)"/>
+
+  <!-- Balance beam -->
+  <rect x="20" y="46" width="88" height="6" rx="3" fill="url(#scaleBar)"/>
+
+  <!-- Fulcrum triangle -->
+  <polygon points="64,96  54,108  74,108" fill="#81c784"/>
+
+  <!-- Left scale pan - hanging chain -->
+  <line x1="28" y1="52" x2="24" y2="72" stroke="#a5d6a7" stroke-width="2" stroke-opacity="0.8"/>
+  <line x1="36" y1="52" x2="40" y2="72" stroke="#a5d6a7" stroke-width="2" stroke-opacity="0.8"/>
+  <!-- Left pan -->
+  <path d="M20 72 Q32 80 44 72" fill="none" stroke="#a5d6a7" stroke-width="3" stroke-linecap="round"/>
+  <line x1="20" y1="72" x2="44" y2="72" stroke="#a5d6a7" stroke-width="2" stroke-opacity="0.5"/>
+
+  <!-- Right scale pan - hanging chain -->
+  <line x1="92" y1="52" x2="88" y2="72" stroke="#a5d6a7" stroke-width="2" stroke-opacity="0.8"/>
+  <line x1="100" y1="52" x2="104" y2="72" stroke="#a5d6a7" stroke-width="2" stroke-opacity="0.8"/>
+  <!-- Right pan -->
+  <path d="M84 72 Q96 80 108 72" fill="none" stroke="#a5d6a7" stroke-width="3" stroke-linecap="round"/>
+  <line x1="84" y1="72" x2="108" y2="72" stroke="#a5d6a7" stroke-width="2" stroke-opacity="0.5"/>
+
+  <!-- Check symbol on left pan (honesty) -->
+  <polyline points="26,67  30,71  38,63"
+            fill="none" stroke="white" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Code brackets on right pan (agent) -->
+  <text x="96" y="70" font-family="monospace" font-size="13" font-weight="bold"
+        fill="white" text-anchor="middle" opacity="0.9">&lt;/&gt;</text>
+
+  <!-- Top decorative node -->
+  <circle cx="64" cy="28" r="5" fill="#a5d6a7" stroke="white" stroke-width="1.5"/>
+</svg>

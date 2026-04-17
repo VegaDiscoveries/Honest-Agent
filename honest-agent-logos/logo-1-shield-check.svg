@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a73e8"/>
+      <stop offset="100%" style="stop-color:#0d47a1"/>
+    </linearGradient>
+    <linearGradient id="shield1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+    </linearGradient>
+    <filter id="shadow1">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000044"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="22" fill="url(#bg1)"/>
+
+  <!-- Subtle grid pattern -->
+  <line x1="0" y1="32" x2="128" y2="32" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="0" y1="64" x2="128" y2="64" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="0" y1="96" x2="128" y2="96" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="32" y1="0" x2="32" y2="128" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="64" y1="0" x2="64" y2="128" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="96" y1="0" x2="96" y2="128" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+
+  <!-- Shield -->
+  <path d="M64 16 L96 28 L96 62 Q96 88 64 104 Q32 88 32 62 L32 28 Z"
+        fill="url(#shield1)" stroke="white" stroke-width="2.5" stroke-opacity="0.9" filter="url(#shadow1)"/>
+
+  <!-- Checkmark -->
+  <polyline points="44,63 57,76 84,49"
+            fill="none" stroke="white" stroke-width="7"
+            stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

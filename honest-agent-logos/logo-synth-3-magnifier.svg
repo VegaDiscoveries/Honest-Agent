@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Synthesis 3: Magnifying Glass + Checkmark — Examine + Confirm Truth -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B71C1C"/>
+      <stop offset="100%" style="stop-color:#7F0000"/>
+    </linearGradient>
+    <radialGradient id="lensGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#FFCCBC;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#FF7043;stop-opacity:0.05"/>
+    </radialGradient>
+    <filter id="checkGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rimGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="22" fill="url(#bg)"/>
+
+  <!-- Subtle top highlight -->
+  <ellipse cx="64" cy="0" rx="90" ry="45" fill="white" opacity="0.05"/>
+
+  <!-- Magnifying glass handle -->
+  <line x1="82" y1="82" x2="108" y2="112"
+        stroke="white" stroke-width="11" stroke-linecap="round" stroke-opacity="0.9"/>
+  <!-- Handle inner line (depth) -->
+  <line x1="82" y1="82" x2="108" y2="112"
+        stroke="#FF7043" stroke-width="5" stroke-linecap="round" stroke-opacity="0.4"/>
+
+  <!-- Lens outer ring glow -->
+  <circle cx="54" cy="54" r="38"
+          fill="none" stroke="white" stroke-width="5" stroke-opacity="0.15" filter="url(#rimGlow)"/>
+
+  <!-- Lens rim -->
+  <circle cx="54" cy="54" r="36"
+          fill="url(#lensGrad)" stroke="white" stroke-width="7"/>
+
+  <!-- Lens inner rim (depth ring) -->
+  <circle cx="54" cy="54" r="29"
+          fill="none" stroke="white" stroke-width="1.5" stroke-opacity="0.2"/>
+
+  <!-- Checkmark inside lens -->
+  <polyline points="34,54 46,66 74,40"
+            fill="none" stroke="white" stroke-width="9"
+            stroke-linecap="round" stroke-linejoin="round"
+            filter="url(#checkGlow)"/>
+
+  <!-- Lens shine -->
+  <ellipse cx="43" cy="41" rx="8" ry="5"
+           fill="white" opacity="0.2" transform="rotate(-35 43 41)"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <filter id="greenGlow">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="22" fill="url(#bg)"/>
+
+  <!-- Dot grid (VS Code feel) -->
+  <g fill="white" opacity="0.07">
+    <circle cx="24" cy="24" r="1"/><circle cx="48" cy="24" r="1"/><circle cx="72" cy="24" r="1"/><circle cx="96" cy="24" r="1"/>
+    <circle cx="24" cy="48" r="1"/><circle cx="48" cy="48" r="1"/><circle cx="72" cy="48" r="1"/><circle cx="96" cy="48" r="1"/>
+    <circle cx="24" cy="72" r="1"/><circle cx="48" cy="72" r="1"/><circle cx="72" cy="72" r="1"/><circle cx="96" cy="72" r="1"/>
+    <circle cx="24" cy="96" r="1"/><circle cx="48" cy="96" r="1"/><circle cx="72" cy="96" r="1"/><circle cx="96" cy="96" r="1"/>
+  </g>
+
+  <!-- Shield glow layer -->
+  <path d="M64 16 L96 28 L96 62 Q96 88 64 104 Q32 88 32 62 L32 28 Z"
+        fill="#3FB950" fill-opacity="0.05" stroke="#3FB950" stroke-width="3"
+        filter="url(#greenGlow)"/>
+
+  <!-- Shield crisp outline -->
+  <path d="M64 16 L96 28 L96 62 Q96 88 64 104 Q32 88 32 62 L32 28 Z"
+        fill="none" stroke="#3FB950" stroke-width="2" filter="url(#softGlow)"/>
+
+  <!-- Neon green checkmark -->
+  <polyline points="44,63 57,76 84,49"
+            fill="none" stroke="#3FB950" stroke-width="7.5"
+            stroke-linecap="round" stroke-linejoin="round"
+            filter="url(#greenGlow)"/>
+
+  <!-- Small corner accents (bracket style) -->
+  <path d="M28 28 L28 20 L36 20" fill="none" stroke="#3FB950" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+  <path d="M100 28 L100 20 L92 20" fill="none" stroke="#3FB950" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+</svg>
