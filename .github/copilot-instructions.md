@@ -12,3 +12,8 @@ This project stores AI customization files for GitHub Copilot and Claude.
 - `.github/prompts/` for `*.prompt.md`
 - `.github/skills/` for Copilot skills (`SKILL.md` per skill folder)
 - `.claude/skills/` for Claude skills (`SKILL.md` per skill folder)
+
+## Git Repository
+- Local git root: `E:\Development_Git_Local\git_HonestAgent`
+- The VS Code workspace folder (`c:\Development\VegaDiscoveries\VS Code - Extensions\HonestAgent`) is NOT the git root.
+- All `git` commands must be run from the git root above.
