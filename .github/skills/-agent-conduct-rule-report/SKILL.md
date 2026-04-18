@@ -11,12 +11,12 @@ description: Generate a structured session conduct report from session memory. U
 - User references the conduct log or asks what violations were caught and corrected
 
 ## Inputs
-- `/memories/session/conduct-violations.md` — the session violation log maintained by the conduct rules in `CLAUDE.md`. If this file does not exist, note that no violations were logged and generate the report with empty violation section.
+- `/memories/session/conduct-violations.md` — the session violation log maintained by the conduct rules in `AGENTS.md` (and any agent-specific file that references it, e.g. `.claude/CLAUDE.md`). If this file does not exist, note that no violations were logged and generate the report with empty violation section.
 - Session conversation context — used to supplement the violation log with narrative descriptions of where rules operated.
 
 ## Output File Location and Naming
-- Default path: `.\ClaudeConductRulesEffect\` relative to the workspace root
-- Filename: `Claude Conduct Rules Effect YYYYMMDD HH-MM.md`  
+- Default path: `.\AgentConductRulesEffect\` relative to the workspace root
+- Filename: `Agent Conduct Rules Effect YYYYMMDD HH-MM.md`  
   - Use today's date and current time: `Get-Date -Format "HH-mm"` in a terminal call
   - Create the folder if it does not exist
 - Apply the `large-file-edit` skill — the report will exceed 60 lines; use stub-then-fill creation pattern
@@ -36,7 +36,7 @@ The report must contain the following sections in order. Do not omit any section
 
 ### 3. Rules That Actively Shaped Agent Behavior
 - For each unique Rule # in the violation log, write a subsection:
-  - **Rule text** (full, from CLAUDE.md)
+  - **Rule text** (full, from `AGENTS.md`)
   - **Effect in this session** — what the agent was about to do, what the rule prevented, what was produced instead
   - Cite the turn number from the log row if known
 - If the log is empty, write this section from session context alone, noting any rules whose effects are visible in outputs
@@ -67,7 +67,7 @@ The report must contain the following sections in order. Do not omit any section
 1. **Read the skill** — this file must be fully loaded before proceeding (do not skip based on partial read)
 2. **Read the violation log** — load `/memories/session/conduct-violations.md` using the memory tool
 3. **Get the current timestamp** — run `Get-Date -Format "HH-mm"` in a terminal to get the time for the filename
-4. **Create the output folder** — `New-Item -ItemType Directory -Path ".\ClaudeConductRulesEffect" -Force`
+4. **Create the output folder** — `New-Item -ItemType Directory -Path ".\AgentConductRulesEffect" -Force`
 5. **Create the report file with section stubs** — use `create_file`; do not write full content yet
 6. **Fill each section sequentially** — use `replace_string_in_file` one section at a time per `large-file-edit` rules; no section fill may exceed ~40 lines per call
 7. **Verify after each section** — run the PowerShell line-count check after each fill:
@@ -109,3 +109,4 @@ The report must contain the following sections in order. Do not omit any section
 ## Changelog
 - **v1.00_20260416:** Created. Generates a structured conduct report from session memory violation log.
 - **v1.01_20260416:** Added Steps 9–11 to workflow. After report completion, checks for `-chat-save-transcript` skill; if found, runs it and cross-links both output files with a `## Related Files` / `## Related Conduct Report` section appended to each.
+- **v1.02_20260417:** Updated all `CLAUDE.md` references to `AGENTS.md` (conduct rules are now LLM-agnostic, defined in `AGENTS.md` with agent-specific files pointing back to it). Renamed output folder from `ClaudeConductRulesEffect` to `AgentConductRulesEffect` and filename prefix from `Claude Conduct Rules Effect` to `Agent Conduct Rules Effect`.
