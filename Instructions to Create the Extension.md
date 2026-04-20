@@ -36,6 +36,7 @@ The conduct rules are inside `AGENTS.md` and are also self-contained in `AgentCo
 | `CLAUDE.md` | `project root/.claude/` |
 | `SKILL.md` (conduct-rule-report) | `project root/.github/skills/-agent-conduct-rule-report/` |
 | `SKILL.md` (pre-response-gate) | `project root/.github/skills/-agent-pre-response-gate/` |
+| `-agent-pre-response-gate.instructions.md` | `project root/.github/instructions/` |
 
 ---
 
@@ -48,6 +49,7 @@ Create any of the following folders if they do not already exist:
 - `.github/skills/`
 - `.github/skills/-agent-conduct-rule-report/`
 - `.github/skills/-agent-pre-response-gate/`
+- `.github/instructions/`
 
 ---
 
@@ -79,6 +81,13 @@ Create any of the following folders if they do not already exist:
   - Check the Bootstrap Status at the end of the file.
     - If `Status: bootstrapped` — change it to `Status: waiting`.
     - Otherwise — do nothing.
+
+### `.github/instructions/-agent-pre-response-gate.instructions.md`
+
+- **If it already exists** — prompt the user: notify them the file already exists and ask for confirmation to overwrite it.
+  - **Yes** — overwrite the existing file.
+  - **No** — leave the existing file (the user may have modified it).
+- **If it does not exist** — use the `-agent-pre-response-gate.instructions.md` file from this project.
 
 ---
 
